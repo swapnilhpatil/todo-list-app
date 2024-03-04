@@ -1,19 +1,43 @@
-// Define a Todo interface
+/**
+ * Represents a todo item.
+ * @typedef {Object} Todo
+ * @property {number} id - The unique identifier of the todo.
+ * @property {string} text - The text content of the todo.
+ * @property {boolean} completed - Indicates whether the todo is completed or not.
+ */
 export interface Todo {
   id: number;
   text: string;
   completed: boolean;
 }
   
-// Define the props interface for TodoList
+/**
+ * Represents the props interface for the TodoList component.
+ * @typedef {Object} TodoListProps
+ * @property {Todo[]} todos - An array of Todo objects representing the list of todos.
+ * @property {function} toggleTodo - A function used to toggle the completion status of a todo item.
+ * @property {number} toggleTodo.id - The unique identifier of the todo to be toggled.
+ * @returns {void}
+ */
 export interface TodoListProps {
   todos: Todo[]; // Array of Todo objects
   toggleTodo: (id: number) => void; // Function to toggle todo completion
 }
 
-// Define the props interface for TodoForm
+/**
+ * Represents the props interface for the TodoForm component.
+ * @typedef {Object} TodoFormProps
+ * @property {function} addTodo - A function used to add a new todo item.
+ * @property {string} addTodo.text - The text content of the new todo item to be added.
+ * @returns {void}
+ */
 export interface TodoFormProps {
   addTodo: (text: string) => void;
 }
-  
+
+/**
+ * Represents an empty string constant.
+ * @constant {string} EMPTY_STRING
+ * @default
+ */
 export const EMPTY_STRING = '';
