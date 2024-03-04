@@ -1,18 +1,18 @@
-// pages/index.js
 'use client'
+
 import React, { useState } from 'react';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
+import { Todo } from '../types';
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = (text) => {
+  const addTodo = (text: string): void => {
     setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
   };
 
-  const toggleTodo = (id) => {
+  const toggleTodo = (id: number): void => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
@@ -25,4 +25,6 @@ export default function Home() {
       <TodoList todos={todos} toggleTodo={toggleTodo} />
     </div>
   );
-}
+};
+
+export default Home;
