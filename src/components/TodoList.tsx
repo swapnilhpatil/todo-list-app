@@ -1,5 +1,6 @@
 import React from 'react';
-import { EMPTY_STRING, TodoListProps } from "../types";
+import { EMPTY_STRING, TodoListActionProps, TodoListProps } from "../types";
+import TodoItem from './TodoItem';
   
 // // Define a Todo interface
 // interface Todo {
@@ -15,17 +16,18 @@ import { EMPTY_STRING, TodoListProps } from "../types";
 //   }
   
   // TodoList component with props typed using TodoListProps interface
-  const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
+  const TodoList: React.FC<TodoListProps & TodoListActionProps> = ({ todos, onComplete, onDelete }) => {
     return (
       <div>
         {todos.map(todo => (
-          <div
-            key={todo.id}
-            onClick={() => toggleTodo(todo.id)}
-            className={`cursor-pointer ${todo.completed ? 'line-through' : EMPTY_STRING}`}
-          >
-            {todo.text}
-          </div>
+          // <div
+          //   key={todo.id}
+          //   onClick={() => toggleTodo(todo.id)}
+          //   className={`cursor-pointer ${todo.completed ? 'line-through' : EMPTY_STRING}`}
+          // >
+          //   {todo.text}
+          // </div>
+          <TodoItem key={todo.id} todo={todo} onComplete={onComplete} onDelete={onDelete} />
         ))}
       </div>
     );

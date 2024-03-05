@@ -11,6 +11,9 @@ export interface Todo {
   completed: boolean;
 }
   
+export interface TodoItemProps {
+  todo: Todo; // Todo objects
+}
 /**
  * Represents the props interface for the TodoList component.
  * @typedef {Object} TodoListProps
@@ -21,9 +24,16 @@ export interface Todo {
  */
 export interface TodoListProps {
   todos: Todo[]; // Array of Todo objects
-  toggleTodo: (id: number) => void; // Function to toggle todo completion
+  // todo: Todo; // Array of Todo objects
+  // toggleTodo: (id: number) => void; // Function to toggle todo completion
+  // onComplete: (id: number) => void; // Function to mark todo as completed
+  // onDelete: (id: number) => void; // Function to delete todo
 }
 
+export interface TodoListActionProps {
+  onComplete: (id: number) => void; // Function to mark todo as completed
+  onDelete: (id: number) => void; // Function to delete todo
+}
 /**
  * Represents the props interface for the TodoForm component.
  * @typedef {Object} TodoFormProps
