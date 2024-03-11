@@ -2,7 +2,9 @@
  * Represents a todo item.
  * @typedef {Object} Todo
  * @property {number} id - The unique identifier of the todo.
- * @property {string} text - The text content of the todo.
+ * @property {string | undefined} text - The text content of the todo and it's optional.
+ * @property {string} title - The title content of the todo.
+ * @property {string} description - The description content of the todo.
  * @property {boolean} completed - Indicates whether the todo is completed or not.
  */
 export interface Todo {
