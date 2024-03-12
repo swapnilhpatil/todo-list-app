@@ -6,7 +6,7 @@ const TodoItem : React.FC<TodoItemProps & TodoListActionProps> = ({ todo, onComp
   return (
     <div className="flex justify-between items-center border-b border-gray-200 py-2">
       <div>
-        <h3 className={todo.completed ? 'line-through text-gray-400' : ''}>{todo.text}</h3>
+        <h3 className={todo.completed ? 'line-through text-gray-400' : ''}>{todo.title}</h3>
         <p>{todo.description}</p> {/* Render description */}
       </div>
       <div>

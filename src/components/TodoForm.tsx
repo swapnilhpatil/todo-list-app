@@ -8,7 +8,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
-    addTodo(title);
+    addTodo(title, description ?? '');
     setTitle(EMPTY_STRING);
     setDescription(EMPTY_STRING);
   };

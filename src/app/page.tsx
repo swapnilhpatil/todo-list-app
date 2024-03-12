@@ -8,8 +8,8 @@ import { Todo } from '../types';
 const Home: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodo = (text: string): void => {
-    setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
+  const addTodo = (title: string, description?: string): void => {
+    setTodos([...todos, { id: todos.length + 1, title, description, completed: false }]);
   };
 
   const toggleTodo = (id: number): void => {

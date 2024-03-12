@@ -11,7 +11,7 @@ export interface Todo {
   id: number;
   text?: string;
   title: string;
-  description: string;
+  description?: string;
   completed: boolean;
 }
   
@@ -33,7 +33,7 @@ export interface TodoItemProps {
  */
 export interface TodoListProps {
   todos: Todo[]; // Array of Todo objects
-  toggleTodo: (id: number) => void; // Function to toggle todo completion
+  toggleTodo?: (id: number) => void; // Function to toggle todo completion
 }
 
 /**
@@ -54,7 +54,7 @@ export interface TodoListActionProps {
  * @property {string} addTodo.text - The text content of the new todo item to be added.
  */
 export interface TodoFormProps {
-  addTodo: (text: string) => void;
+  addTodo: (title: string, description?: string) => void;
 }
 
 /**
