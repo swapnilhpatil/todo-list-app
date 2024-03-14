@@ -18,13 +18,18 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #f0f0f0; /* Set your background color here */
+  background-color: #2A3132; /* Set your background color here */
   /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
+}
+
+.todo-app-container {
+  background-color: #656E77;
+  width: 94%;
 }
 
 @layer utilities {

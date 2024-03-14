@@ -72,8 +72,8 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
         placeholder="Add new todo..."
         className="border border-gray-300 rounded-md p-2 mr-2"
       /> */}
-      <div className='flex-none flex align-bottom'>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+      <div className='flex-none flex' style={{display: "flex", alignItems: "end"}}>
+        <button type="submit" className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md">
           Add
         </button>
         </div>
