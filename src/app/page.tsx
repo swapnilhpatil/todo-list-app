@@ -30,9 +30,9 @@ const Home: React.FC = () => {
 
 
   return (
-    <div className="todo-app-container">
+    <div className="todo-app-container w-48 md:container md:mx-auto">
       <h1 className="text-center text-3xl font-bold mt-10 mb-5">Todo App</h1>
-    <div className="container w-auto mx-auto mt-10">
+    <div className="container w-full mx-auto mt-10">
       <div>
       <TodoForm addTodo={addTodo} />
       </div>

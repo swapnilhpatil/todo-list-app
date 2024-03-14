@@ -19,6 +19,7 @@ import TodoItem from './TodoItem';
   const TodoList: React.FC<TodoListProps & TodoListActionProps> = ({ todos, onComplete, onDelete }) => {
     return (
       <div>
+         <ul role="list" className="divide-y divide-gray-100">
         {todos.map(todo => (
           // <div
           //   key={todo.id}
@@ -27,9 +28,29 @@ import TodoItem from './TodoItem';
           // >
           //   {todo.text}
           // </div>
-          <TodoItem key={todo.id} todo={todo} onComplete={onComplete} onDelete={onDelete} />
+          <li key={todo.id} className="flex justify-between gap-x-6 py-5">
+            <TodoItem key={todo.id} todo={todo} onComplete={onComplete} onDelete={onDelete} />
+          </li>
         ))}
+        </ul>
       </div>
+    //    <ul role="list" className="divide-y divide-gray-100">
+    //    {todos.map((todo) => (
+    //      <li key={todo.id} className="flex justify-between gap-x-6 py-5">
+    //        <div className="flex min-w-0 gap-x-4">
+    //          {/* <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" /> */}
+    //          <div className="min-w-0 flex-auto">
+    //            <p className="text-sm font-semibold leading-6 text-gray-900">{todo.title}</p>
+    //            <p className="mt-1 truncate text-xs leading-5 text-gray-500">{todo?.description}</p>
+    //          </div>
+    //        </div>
+    //        <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+    //          <p className="text-sm leading-6 text-gray-900">{todo.title}</p>
+             
+    //        </div>
+    //      </li>
+    //    ))}
+    //  </ul>
     );
   };
   
