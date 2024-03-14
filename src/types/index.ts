@@ -58,6 +58,18 @@ export interface TodoFormProps {
 }
 
 /**
+ * Represents a navigation item.
+ * @property {string} name - The name of the navigation item.
+ * @property {string} href - The href attribute for the navigation item.
+ * @property {boolean} current - Indicates if the navigation item is currently active.
+ */
+export interface NavigationItem {
+  name: string;
+  href: string;
+  current: boolean;
+}
+
+/**
  * Represents an empty string constant.
  * @constant {string} EMPTY_STRING
  * @default

@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
-import { Todo } from '../types';
+import { NavigationItem, Todo } from '../types';
 
 const Home: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [navigation, setNavigation] = useState<any[]>([
+  const [navigation, setNavigation] = useState<NavigationItem[]>([
     { name: 'Todo', href: '#', current: true },
     { name: 'Completed', href: '#', current: false },
   ]);
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
       </div>
       {/* <TodoList todos={todos} toggleTodo={toggleTodo} /> */}
       <div style={{padding: "2%" }}>
-      <div className="hidden sm:ml-6 sm:block">
+      <div >
         <div className="flex space-x-4">
           {navigation.map((item) => (
             <a
@@ -78,13 +78,11 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
-        <h2>Not Completed</h2>
         <TodoList
           todos={todos.filter(todo => !todo.completed)}
           onComplete={handleComplete}
           onDelete={handleDelete}
         />
-        <h2>Completed</h2>
         <TodoList
           todos={todos.filter(todo => todo.completed)}
           onComplete={handleComplete}
