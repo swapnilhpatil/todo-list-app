@@ -50,7 +50,13 @@ const Home: React.FC = () => {
     }));
   };
   
-
+  const getTodosBasedOnCurrentNav =(): Todo[] => {
+    const currentItem = navigation.find(item => item.current);
+    if(currentItem && currentItem.name === 'Completed'){
+      return todos.filter(todo => todo.completed);
+    }
+    return todos.filter(todo => !todo.completed)
+  }
   return (
     <div className="todo-app-container w-48 md:container md:mx-auto p-8 my-8">
       <h1 className="text-center text-3xl font-bold">Todo App</h1>
@@ -79,15 +85,15 @@ const Home: React.FC = () => {
         </div>
       </div>
         <TodoList
-          todos={todos.filter(todo => !todo.completed)}
+          todos={getTodosBasedOnCurrentNav()}
           onComplete={handleComplete}
           onDelete={handleDelete}
         />
-        <TodoList
+        {/* <TodoList
           todos={todos.filter(todo => todo.completed)}
           onComplete={handleComplete}
           onDelete={handleDelete}
-        />
+        /> */}
       </div>
     </div>
     </div>
