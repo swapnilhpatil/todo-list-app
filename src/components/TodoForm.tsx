@@ -25,7 +25,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
       /> */}
       <div className='flex gap-8 columns-3'>
         <div className='flex-1 '>
-          <label htmlFor="title" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="title" className="block text-sm font-semibold leading-6 text-white">
             Title
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">
@@ -45,7 +45,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
         </div>
 
         <div className='flex-1 '>
-          <label htmlFor="description" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="description" className="block text-sm font-semibold leading-6 text-white">
             Description
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">

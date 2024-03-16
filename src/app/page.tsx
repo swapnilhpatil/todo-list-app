@@ -59,7 +59,7 @@ const Home: React.FC = () => {
   }
   return (
     <div className="todo-app-container w-48 md:container md:mx-auto p-8 my-8">
-      <h1 className="text-center text-3xl font-bold">Todo App</h1>
+      <h1 className="text-center text-3xl font-bold text-white">Todo App</h1>
     <div className="container w-full mx-auto">
       <div style={{padding: "2%" }}>
       <TodoForm addTodo={addTodo} />
