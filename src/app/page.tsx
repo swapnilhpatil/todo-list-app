@@ -64,7 +64,6 @@ const Home: React.FC = () => {
       <div style={{padding: "2%" }}>
       <TodoForm addTodo={addTodo} />
       </div>
-      {/* <TodoList todos={todos} toggleTodo={toggleTodo} /> */}
       <div style={{padding: "2%" }}>
       <div >
         <div className="flex space-x-4">
@@ -89,11 +88,6 @@ const Home: React.FC = () => {
           onComplete={handleComplete}
           onDelete={handleDelete}
         />
-        {/* <TodoList
-          todos={todos.filter(todo => todo.completed)}
-          onComplete={handleComplete}
-          onDelete={handleDelete}
-        /> */}
       </div>
     </div>
     </div>
