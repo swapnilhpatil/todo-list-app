@@ -15,23 +15,12 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <label>title</label>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Add new todo..."
-        className="border border-gray-300 rounded-md p-2 mr-2"
-      /> */}
       <div className='flex gap-8 columns-3'>
         <div className='flex-1 '>
           <label htmlFor="title" className="block text-sm font-semibold leading-6 text-white">
             Title
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">
-            {/* <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <span className="text-gray-500 sm:text-sm">$</span>
-        </div> */}
             <input
               type="text"
               name="title"
@@ -49,9 +38,6 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
             Description
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">
-            {/* <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <span className="text-gray-500 sm:text-sm">$</span>
-        </div> */}
             <input
               type="text"
               name="description"
@@ -64,14 +50,6 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
           </div>
         </div>
 
-        {/* <label>description</label>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Add new todo..."
-        className="border border-gray-300 rounded-md p-2 mr-2"
-      /> */}
       <div className='flex-none flex' style={{display: "flex", alignItems: "end"}}>
         <button type="submit" className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md">
           Add
