@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { EMPTY_STRING, TodoFormProps } from '../types';
+import React, { useState } from "react";
+import { EMPTY_STRING, TodoFormProps } from "../types";
 
 const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
   const [title, setTitle] = useState(EMPTY_STRING);
@@ -15,9 +15,12 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='flex gap-8 columns-3'>
-        <div className='flex-1 '>
-          <label htmlFor="title" className="block text-sm font-semibold leading-6 text-white">
+      <div className="flex gap-8 columns-3">
+        <div className="flex-1 ">
+          <label
+            htmlFor="title"
+            className="block text-sm font-semibold leading-6 text-white"
+          >
             Title
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">
@@ -33,8 +36,11 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
           </div>
         </div>
 
-        <div className='flex-1 '>
-          <label htmlFor="description" className="block text-sm font-semibold leading-6 text-white">
+        <div className="flex-1 ">
+          <label
+            htmlFor="description"
+            className="block text-sm font-semibold leading-6 text-white"
+          >
             Description
           </label>
           <div className="relative mt-2 rounded-md shadow-sm">
@@ -50,10 +56,16 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
           </div>
         </div>
 
-      <div className='flex-none flex' style={{display: "flex", alignItems: "end"}}>
-        <button type="submit" className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md">
-          Add
-        </button>
+        <div
+          className="flex-none flex"
+          style={{ display: "flex", alignItems: "end" }}
+        >
+          <button
+            type="submit"
+            className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md"
+          >
+            Add
+          </button>
         </div>
       </div>
     </form>
