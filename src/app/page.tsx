@@ -13,9 +13,20 @@ const Home: React.FC = () => {
   ]);
 
   useEffect(()=> {
-    console.log("todos", todos);
+    console.log("todos 1", todos);
+    const storedTodos = JSON.parse(localStorage.getItem('todos') ?? '[]');
+    if(storedTodos?.length){
+      setTodos(storedTodos);
+    }
+  },[]);
 
-  },[todos])
+  useEffect(()=> {
+    console.log("todos", todos);
+    if(todos?.length){
+      localStorage.setItem('todos',JSON.stringify(todos));
+    }
+  },[todos]);
+
   const addTodo = (title: string, description?: string): void => {
     setTodos([
       ...todos,
