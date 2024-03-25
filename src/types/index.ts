@@ -6,6 +6,9 @@
  * @property {string} title - The title content of the todo.
  * @property {string} description - The description content of the todo.
  * @property {boolean} completed - Indicates whether the todo is completed or not.
+ * @property {string} createdAt - The createdAt date and time of the todo.
+ * @property {string} updatedAt - The updatedAt date and time of the todo.
+ * 
  */
 export interface Todo {
   id: number;
@@ -13,6 +16,8 @@ export interface Todo {
   title: string;
   description?: string;
   completed: boolean;
+  createdAt?: string;
+  updatedAt?: string;
 }
   
 /**

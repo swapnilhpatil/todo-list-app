@@ -19,7 +19,7 @@ const TodoItem: React.FC<TodoItemProps & TodoListActionProps> = ({
                 {todo?.description ? todo?.description : "No description"}
               </p>
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden sm:block flex justify-end mt-2">
               <div>
                 <button
                   onClick={() => onComplete(todo.id)}

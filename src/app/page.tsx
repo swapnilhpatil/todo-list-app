@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoList from "../components/TodoList";
 import TodoForm from "../components/TodoForm";
 import { NavigationItem, Todo } from "../types";
@@ -12,10 +12,14 @@ const Home: React.FC = () => {
     { name: "Completed", href: "#", current: false },
   ]);
 
+  useEffect(()=> {
+    console.log("todos", todos);
+
+  },[todos])
   const addTodo = (title: string, description?: string): void => {
     setTodos([
       ...todos,
-      { id: todos.length + 1, title, description, completed: false },
+      { id: todos.length + 1, title, description, completed: false, createdAt: new Date() + '' },
     ]);
   };
 
@@ -30,7 +34,7 @@ const Home: React.FC = () => {
   const handleComplete = (id: number) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        todo.id === id ? { ...todo, completed: !todo.completed, updatedAt: new Date() + '' } : todo
       )
     );
   };
